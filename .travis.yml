@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- '0.10'
+- '0.12'
+- '4.0'
+- '4.1'
+#deploy:
+#  provider: heroku
+#  api_key:
+#    secure: IfGGp2nrnZdS/bbeITCgoEORQxnnzUMLdTr8rUNDmcPZkRMslg3SpOhyykuX/f5RJFF+V+BwbAFtlpntNhnDCZ+x2BA4Ou7PMk6WPyZrBU1mMh+0hG4Hp1TStvHUI+4Ei4iZVFnADKCsgZt0E3enOCDROTRaJhZNmE5uVYXpYwq/xT6t2zNS8po3hEfo7Alv9M7CcRdwsuUzWitSB8sfDyyEV+jTG1U2sImXgngRWHNDwCreIkFr22UHYjQmPvZppyzf5nf0/X8sn8q990GsCwkKRVANFyLQO/i7Q41zX3Vh6dKDo+m3o+Xo8Pah+bo6y4TxJ/UoWoiLxP4vkrrv8T7CoPkALv2Lghq92+x1nbNPODGj2i4yC3Hn5JYO6osytY1lB+7SCHtuKbBfMK2Lw1MDRSg7RP1H+Q/Ha+3lsekcdyx0NzfyJAkHsdBYKn9bk6BHkQRwZfV2I+HcTOZN2UhyzYIyR3Pn52QwEvoS+g/mf2bbWcjkxScvPtWe/m409K2DuG0paoHw6Mowb9p9eP2hk4srEVQWfukZJls0ga5K9Inf8fsfRfJrZ5DNeGzINHQCbgezJEESqViGM/JFhtveGNqGpqxbZan8Y6rlo0DQzAf9hVy17XVcZYb3thpmAr506EAuoYdh/CLyzErPCWBcEJUDZiziQJxocjbn6Co=
+#  app: tox-chat-ui
+#  on:
+#    tags: true
