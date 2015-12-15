@@ -15,12 +15,16 @@
   "homepage": "https://github.com/dasrick/tox-chat-ui#readme",
   "dependencies": {
     "angular": "^1.4.8",
+    "bootstrap": "^3.3.6",
+    "clean-css": "^3.4.8",
     "express": "^4.13.3",
     "fs-extra": "^0.26.2",
     "glob": "^6.0.1",
     "jscs": "^2.7.0",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.1.0",
+    "less": "^2.5.3",
+    "less-plugin-autoprefix": "^1.5.1",
     "ng-annotate-webpack-plugin": "^0.1.2",
     "webpack": "^1.12.9"
   },
@@ -30,8 +34,9 @@
   },
   "scripts": {
     "postinstall": "npm run build",
-    "prebuild": "mkdir -p web/js/",
-    "build": "npm run jscs && npm run jshint && npm run build:js",
+    "prebuild": "mkdir -p web/css/ web/js/",
+    "build": "npm run build:css && npm run jscs && npm run jshint && npm run build:js",
+    "build:css": "lessc --autoprefix='last 2 versions,ie 9' src/media/less/style.less web/css/style.css && cleancss --source-map -o web/css/style.min.css web/css/style.css",
     "build:js": "webpack --config webpack.config.js",
     "jscs": "jscs ./src ./test ./scripts",
     "jshint": "jshint ./src ./test ./scripts --reporter node_modules/jshint-stylish/index.js",
