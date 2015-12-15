@@ -13,7 +13,14 @@
     "url": "https://github.com/dasrick/tox-chat-ui/issues"
   },
   "homepage": "https://github.com/dasrick/tox-chat-ui#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "david": "^7.0.0"
+  },
   "scripts": {
+    "start": "node web.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
