@@ -14,12 +14,27 @@
   },
   "homepage": "https://github.com/dasrick/tox-chat-ui#readme",
   "dependencies": {
-    "express": "^4.13.3"
+    "angular": "^1.4.8",
+    "express": "^4.13.3",
+    "fs-extra": "^0.26.2",
+    "glob": "^6.0.1",
+    "jscs": "^2.7.0",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.1.0",
+    "ng-annotate-webpack-plugin": "^0.1.2",
+    "webpack": "^1.12.9"
   },
   "devDependencies": {
+    "angular-mocks": "^1.4.8",
     "david": "^7.0.0"
   },
   "scripts": {
+    "postinstall": "npm run build",
+    "prebuild": "mkdir -p web/js/",
+    "build": "npm run jscs && npm run jshint && npm run build:js",
+    "build:js": "webpack --config webpack.config.js",
+    "jscs": "jscs ./src ./test ./scripts",
+    "jshint": "jshint ./src ./test ./scripts --reporter node_modules/jshint-stylish/index.js",
     "start": "node web.js",
     "test": "echo \"Error: no test specified\" && exit 0"
   }
