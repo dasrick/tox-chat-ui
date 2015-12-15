@@ -1,0 +1,7 @@
+{
+  "name":"tox-chat-ui",
+  "description":"AngularJS frontend app for a sample chat ... ",
+  "scripts":{},
+  "env":{},
+  "addons":[]
+}
