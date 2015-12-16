@@ -3,7 +3,6 @@ html, body, main {
   height: 100%;
 }
 
-
 @chat-header-height: 55px;
 @chat-footer-height: 55px;
 
@@ -15,6 +14,7 @@ html, body, main {
     max-height: @chat-header-height;
   }
   .chat-body {
+    padding: 0 30px 15px;
     overflow-x: hidden;
     height: calc(~"100% -  (@{chat-header-height} + @{chat-footer-height}) ");
     .chat-message {
@@ -29,8 +29,6 @@ html, body, main {
     max-height: @chat-footer-height;
   }
 
-
-
   height: 100%;
   > .col-xs-12.col-sm-12,
   .panel {
@@ -40,7 +38,36 @@ html, body, main {
     margin-bottom: 0;
   }
 
+  p {
+    margin-bottom: 0;
+  }
+  .chat-message-box {
+    background-color: #f6f6f6;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 1px 0 #eee;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .author {
+    font-size: .8em;
+    font-weight: 600;
+    color: #888;
+  }
+  .date {
+    font-size: .8em;
+    font-weight: 400;
+    color: #888;
+  }
+  .message {
+    font-weight: 400;
+    color: #000;
+  }
+
   .self-authored {
-    background-color: #00A000;
+    .chat-message-box {
+      background-color: #D9EDF7;
+    }
   }
 }

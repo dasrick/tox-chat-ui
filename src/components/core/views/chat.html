@@ -8,20 +8,28 @@
                 <div class="row chat-message"
                      ng-repeat="message in chat.messages"
                      ng-class="{'self-authored': (chat.username == message.username)}">
-                    <div class="col-xs-12 col-sm-12">
-                        <p>{{message.content}}</p>
-                        <p>{{message.username}}</p>
-                        <span ng-if="message.date" class="date">{{message.date|date:'hh:mm:a'}}</span>
+                    <div class="col-xs-11 chat-message-box" ng-class="(chat.username == message.username) ? '' : 'col-xs-offset-1'">
+                        <div class="row">
+                            <div class="col-xs-6 text-left">
+                                <p class="author">{{message.username}}</p>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <p class="date" ng-if="message.date" class="date">{{message.date|date:'dd.MM.yyyy HH:mm:ss'}}</p>
+                            </div>
+                        </div>
+                        <p class="message">{{message.content}}</p>
                     </div>
                 </div>
             </div>
             <div class="panel-footer chat-footer">
                 <form ng-submit="chat.submitCall()">
                     <div class="input-group">
-                        <input type="text" class="form-control chat-input-field" placeholder="{{chat.inputPlaceholderText}}"
+                        <input type="text" class="form-control chat-input-field"
+                               placeholder="{{chat.inputPlaceholderText}}"
                                ng-model="chat.message"/>
                         <span class="input-group-btn">
-                            <input type="submit" class="btn btn-primary chat-submit-button" value="{{chat.submitButtonText}}"/>
+                            <input type="submit" class="btn btn-primary chat-submit-button"
+                                   value="{{chat.submitButtonText}}"/>
                         </span>
                     </div>
                 </form>
