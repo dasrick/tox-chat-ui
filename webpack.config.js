@@ -36,7 +36,7 @@ var config = {
     //    'apiUrl': JSON.stringify(apiUrl)
     //  }
     //}),
-    //new ngAnnotatePlugin({add: true}),
+    new ngAnnotatePlugin({add: true}),
     new webpack.optimize.UglifyJsPlugin(
       {compress: {warnings: false}}
     ),

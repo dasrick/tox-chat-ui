@@ -1,0 +1,46 @@
+html, body, main {
+  width: 100%;
+  height: 100%;
+}
+
+
+@chat-header-height: 55px;
+@chat-footer-height: 55px;
+
+.mi-chat {
+  .chat-header {
+    position: relative;
+    overflow: hidden;
+    height: @chat-header-height;
+    max-height: @chat-header-height;
+  }
+  .chat-body {
+    overflow-x: hidden;
+    height: calc(~"100% -  (@{chat-header-height} + @{chat-footer-height}) ");
+    .chat-message {
+      display: flex;
+      overflow: hidden;
+    }
+  }
+  .chat-footer {
+    position: relative;
+    overflow: hidden;
+    height: @chat-footer-height;
+    max-height: @chat-footer-height;
+  }
+
+
+
+  height: 100%;
+  > .col-xs-12.col-sm-12,
+  .panel {
+    height: 100%;
+  }
+  .panel {
+    margin-bottom: 0;
+  }
+
+  .self-authored {
+    background-color: #00A000;
+  }
+}
