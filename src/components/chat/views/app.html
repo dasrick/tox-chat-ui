@@ -1,51 +1,19 @@
 <mi-chat ng-if="chatVm.username"
-         title="Mi Awesome Chat"
-         input-placeholder-text="just write here"
-         submit-button-text="Send"
+         title="{{chatVm.chatSettings.title}}"
+         input-placeholder-text="{{chatVm.chatSettings.message.placeholder}}"
+         submit-button-text="{{chatVm.chatSettings.message.button}}"
          submit-callback="chatVm.sendMessage"
          messages="chatVm.messages"
          username="chatVm.username"
          template-url="/views/chat/chat-template.html"
 ></mi-chat>
 
-<div ng-if="!chatVm.username"
-     class="mi-chat">
-    <div class="panel panel-success">
-        <div class="panel-heading chat-header">
-            <h3 class="panel-title"><i class="fa fa-fw fa-comments"></i>Mi Awesome Chat</h3>
-        </div>
-        <div class="panel-body chat-body">
-            <div class="row chat-message chatbot-authored">
-                <div class="col-xs-11 chat-message-box">
-                    <div class="row">
-                        <div class="col-xs-6 text-left">
-                            <p class="author">Chatbot</p>
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <p class="date">{{chatVm.now|date:'dd.MM.yyyy HH:mm:ss'}}</p>
-                        </div>
-                    </div>
-                    <p>Bitte geben Sie einen Nickname an.</p>
-                </div>
-            </div>
-        </div>
-        <div class="panel-footer chat-footer">
-            <form name="form" novalidate>
-                <div class="input-group">
-                    <input type="text"
-                           class="form-control chat-input-field"
-                           placeholder="your nickname"
-                           ng-model="user.name"
-                           required>
-                    <span class="input-group-btn">
-                        <input type="submit"
-                               class="btn btn-primary chat-submit-button"
-                               value="Choose"
-                               ng-click="chatVm.setUsername(user)"
-                               ng-disabled="form.$invalid">
-                    </span>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+<mi-chat ng-if="!chatVm.username"
+         title="{{chatVm.chatSettings.title}}"
+         input-placeholder-text="{{chatVm.chatSettings.register.placeholder}}"
+         submit-button-text="{{chatVm.chatSettings.register.button}}"
+         submit-callback="chatVm.setUsername"
+         messages="chatVm.messages"
+         username="chatVm.username"
+         template-url="/views/chat/chat-template.html"
+></mi-chat>

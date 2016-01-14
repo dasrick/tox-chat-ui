@@ -5,18 +5,31 @@
 module.exports = function ($scope, WebSocketService) {
   var vm = this;
   // vars
-  //vm.username = generateUUID(); // TODO to be injected - what about a username
-  //vm.username;
+  vm.appversion = process.env.appversion;
   var clientId = generateUUID();
   var routingKey = 'room42'; // TODO to be dynamic
   var destination = '/exchange/webcast-chat/' + routingKey;
   vm.messages = [];
   vm.now = Date.now();
+  vm.chatSettings = {
+    title: 'Mi Awesome Chat - v' + vm.appversion,
+    botname: 'Chatbot',
+    message: {
+      placeholder: 'just write here',
+      button: 'Send'
+    },
+    register: {
+      placeholder: 'your nickname',
+      button: 'Choose'
+    }
+  };
   // methods
   vm.sendMessage = sendMessage;
   vm.setUsername = setUsername;
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  pushRegisterMessage();
 
   WebSocketService.connect().then(function () {
     WebSocketService.subscribe(destination, function (message) {
@@ -46,16 +59,13 @@ module.exports = function ($scope, WebSocketService) {
   }
 
   function setUsername(user) {
-    if (angular.isDefined(user) && angular.isDefined(user.name)) {
-      vm.username = user.name;
+    console.log(user);
+    if (angular.isDefined(user)) {
+      vm.username = user;
 
       // ToDo nur so eine Idee, könnte auch weg ... landet nicht in der Queue
-      vm.messages.push({
-        'clientId': clientId,
-        'username': 'ChatBot',
-        'content': 'Welcome ' + vm.username + ' ...',
-        'date': Date.now()
-      });
+      vm.messages = [];
+      pushWelcomeMessage();
     }
   }
 
@@ -67,6 +77,28 @@ module.exports = function ($scope, WebSocketService) {
     }
 
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+  }
+
+  function pushRegisterMessage() {
+    // ToDo nur so eine Idee, könnte auch weg ... landet nicht in der Queue
+    vm.messages.push({
+      'clientId': clientId,
+      'username': vm.chatSettings.botname,
+      'content': 'Wie möchteste heißn?',
+      'date': Date.now(),
+      'systemMsg': true
+    });
+  }
+
+  function pushWelcomeMessage() {
+    // ToDo nur so eine Idee, könnte auch weg ... landet nicht in der Queue
+    vm.messages.push({
+      'clientId': clientId,
+      'username': vm.chatSettings.botname,
+      'content': 'Welcome ' + vm.username + ' ...',
+      'date': Date.now(),
+      'systemMsg': true
+    });
   }
 
 };

@@ -29,13 +29,13 @@ var config = {
     ]
   },
   plugins: [
-    //new webpack.DefinePlugin({
-    //  'process.env': {
+    new webpack.DefinePlugin({
+      'process.env': {
     //    'NODE_ENV': JSON.stringify(nodeEnv),
-    //    'appversion': JSON.stringify(require('./package.json').version),
+        'appversion': JSON.stringify(require('./package.json').version),
     //    'apiUrl': JSON.stringify(apiUrl)
-    //  }
-    //}),
+      }
+    }),
     new ngAnnotatePlugin({add: true}),
     new webpack.optimize.UglifyJsPlugin(
       {compress: {warnings: false}}

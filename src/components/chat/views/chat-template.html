@@ -7,7 +7,7 @@
             <div class="panel-body chat-body">
                 <div class="row chat-message"
                      ng-repeat="message in chat.messages"
-                     ng-class="{'self-authored': (chat.username == message.username)}">
+                     ng-class="{'self-authored':(chat.username == message.username),'system-authored':(message.systemMsg == true)}">
                     <div class="col-xs-11 chat-message-box" ng-class="(chat.username == message.username) ? 'col-xs-offset-1' : ''">
                         <div class="row">
                             <div class="col-xs-6 text-left">
