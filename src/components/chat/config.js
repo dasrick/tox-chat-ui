@@ -7,8 +7,8 @@ module.exports = {
     url: '',
     views: {
       'app': {
-        templateUrl: '/views/core/app.html',
-        controller: 'CoreController as coreVm'
+        templateUrl: '/views/chat/app.html',
+        controller: 'ChatController as chatVm'
       }
     }
   }

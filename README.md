@@ -28,3 +28,9 @@ Run with [npm](https://www.npmjs.com/)
 ```sh
 $ npm run start
 ```
+
+## RabbitMQ
+
+* add exchange (example: webcast-chat) as type: fanout, durability: durable, auto-delete: no, internal: no
+* add queue (example: chat-history) durability: durable, auto-delete: no
+* bind the queue to exchange with routingkey room*

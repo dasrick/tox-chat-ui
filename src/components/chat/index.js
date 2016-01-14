@@ -2,14 +2,14 @@
 /**
  * @ngInject
  */
-var ModuleName = 'core',
+var ModuleName = 'chat',
   RoutingConfig = require('./config');
 
 module.exports = angular.module(ModuleName, [])
 
-  .controller('CoreController', require('./controller/CoreController'))
-  //.controller('HeaderLeftController', require('./controller/HeaderLeftController'))
-  //.controller('HeaderRightController', require('./controller/HeaderRightController'))
+  .controller('ChatController', require('./controller/ChatController'))
+
+  .factory('WebSocketService', require('./service/WebSocketService'))
 
   .config(function ($stateProvider) {
     angular.forEach(RoutingConfig, function (config, name) {
