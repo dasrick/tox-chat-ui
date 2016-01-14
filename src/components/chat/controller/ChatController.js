@@ -5,13 +5,16 @@
 module.exports = function ($scope, WebSocketService) {
   var vm = this;
   // vars
-  vm.username = generateUUID(); // TODO to be injected - what about a username
+  //vm.username = generateUUID(); // TODO to be injected - what about a username
+  //vm.username;
   var clientId = generateUUID();
   var routingKey = 'room42'; // TODO to be dynamic
   var destination = '/exchange/webcast-chat/' + routingKey;
   vm.messages = [];
+  vm.now = Date.now();
   // methods
   vm.sendMessage = sendMessage;
+  vm.setUsername = setUsername;
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -42,16 +45,28 @@ module.exports = function ($scope, WebSocketService) {
     }
   }
 
+  function setUsername(user) {
+    if (angular.isDefined(user) && angular.isDefined(user.name)) {
+      vm.username = user.name;
+
+      // ToDo nur so eine Idee, könnte auch weg ... landet nicht in der Queue
+      vm.messages.push({
+        'clientId': clientId,
+        'username': 'ChatBot',
+        'content': 'Welcome ' + vm.username + ' ...',
+        'date': Date.now()
+      });
+    }
+  }
+
   function generateUUID() {
     function s4() {
       return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1);
     }
+
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
   }
-
-  // ToDo nur so eine Idee, könnte auch weg ... landet nicht in der Queue
-  vm.messages.push({'clientId': clientId, 'username': 'ChatBot', 'content': 'Welcome ... ', 'date': Date.now()});
 
 };

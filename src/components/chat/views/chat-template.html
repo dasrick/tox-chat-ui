@@ -1,6 +1,6 @@
 <div class="row mi-chat">
     <div class="col-xs-12 col-sm-12">
-        <div class="panel panel-default">
+        <div class="panel panel-success">
             <div class="panel-heading chat-header">
                 <h3 class="panel-title"><i class="fa fa-fw fa-comments"></i>{{chat.title}}</h3>
             </div>
@@ -14,7 +14,7 @@
                                 <p class="author" ng-bind="message.username"></p>
                             </div>
                             <div class="col-xs-6 text-right">
-                                <p class="date" ng-if="message.date" class="date">{{message.date|date:'dd.MM.yyyy HH:mm:ss'}}</p>
+                                <p class="date" ng-if="message.date">{{message.date|date:'dd.MM.yyyy HH:mm:ss'}}</p>
                             </div>
                         </div>
                         <p class="message" ng-bind="message.content"></p>
@@ -22,14 +22,18 @@
                 </div>
             </div>
             <div class="panel-footer chat-footer">
-                <form ng-submit="chat.submitCall()">
+                <form name="form" novalidate>
                     <div class="input-group">
                         <input type="text" class="form-control chat-input-field"
                                placeholder="{{chat.inputPlaceholderText}}"
-                               ng-model="chat.message"/>
+                               ng-model="chat.message"
+                               required>
                         <span class="input-group-btn">
-                            <input type="submit" class="btn btn-primary chat-submit-button"
-                                   value="{{chat.submitButtonText}}"/>
+                            <input type="submit"
+                                   class="btn btn-primary chat-submit-button"
+                                   value="{{chat.submitButtonText}}"
+                                   ng-click="chat.submitCall()"
+                                   ng-disabled="form.$invalid">
                         </span>
                     </div>
                 </form>
