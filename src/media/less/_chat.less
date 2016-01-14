@@ -13,11 +13,16 @@ main {
 
 .mi-chat {
   .chat-header {
-    //padding: 10px 15px;
     position: relative;
     overflow: hidden;
     height: @chat-header-height;
     max-height: @chat-header-height;
+    .panel-title {
+      margin-top: 9px;
+      i {
+        margin-right: .25em;
+      }
+    }
   }
   .chat-body {
     padding: 0 30px 15px;
