@@ -51,4 +51,7 @@ module.exports = function ($scope, WebSocketService) {
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
   }
 
+  // ToDo nur so eine Idee, könnte auch weg ... landet nicht in der Queue
+  vm.messages.push({'clientId': clientId, 'username': 'ChatBot', 'content': 'Welcome ... ', 'date': Date.now()});
+
 };
