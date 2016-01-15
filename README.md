@@ -9,7 +9,7 @@
 
 > Simple chat for AngularJS
  
-A sample chat app ... based on AngularJS, Bootstrap, SockJS, Webstomp, RabbitMQ ... support Emojis (angular-emoji-filter-hd)
+A sample chat app ... based on AngularJS, Bootstrap, SockJS, Webstomp, RabbitMQ ... support Emoticons (ng-emoticons)
 
 
 ## Installation

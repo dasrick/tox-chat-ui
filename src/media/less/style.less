@@ -3,25 +3,9 @@
 @fa-font-path: '../fonts/font-awesome';
 // Font Awesome ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Angular Emoji Filter HD /////////////////////////////////////////////////////////////////////////////////////////////
-@import '../../../node_modules/angular-emoji-filter-hd/dist/emoji';
-@emoji-images-path: '../img/';
-@media all and (-webkit-min-device-pixel-ratio: 1), all and (min--moz-device-pixel-ratio: 1), all and (-o-min-device-pixel-ratio: 1/1), all and (min-device-pixel-ratio: 1), all and (min-resolution: 96dpi) {
-  .emoji {
-    background-image: url('@{emoji-images-path}emojis.png');
-  }
-}
-@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 144dpi) {
-  .emoji {
-    background-image: url('@{emoji-images-path}emojis@2x.png');
-  }
-}
-@-moz-document url-prefix() {
-  .emoji {
-    background-image: url('@{emoji-images-path}emojis.png');
-  }
-}
-// Angular Emoji Filter HD /////////////////////////////////////////////////////////////////////////////////////////////
+// ng-emoticons ////////////////////////////////////////////////////////////////////////////////////////////////////////
+@import (inline) '../../../node_modules/ng-emoticons/dist/ng-emoticons.min.css';
+// ng-emoticons ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Twitter Bootstrap ///////////////////////////////////////////////////////////////////////////////////////////////////
 @import (inline) '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';

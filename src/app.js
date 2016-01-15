@@ -14,14 +14,14 @@ require('angular-resource');
 require('angular-sanitize');
 require('angular-ui-router');
 require('mi-angular-chat');
-require('angular-emoji-filter-hd');
+require('ng-emoticons/dist/ng-emoticons.min');
 
 var requires = [
   'ngResource',
   'ngSanitize',
   'ui.router',
   'mi.Chat',
-  'dbaq.emoji',
+  'ngEmoticons',
   require('./components').name
 ];
 
