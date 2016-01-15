@@ -9,7 +9,7 @@
 
 > Simple chat for AngularJS
  
-A sample chat app ... based on AngularJS, Bootstrap, SockJS ...
+A sample chat app ... based on AngularJS, Bootstrap, SockJS, Webstomp, RabbitMQ ... support Emojis (angular-emoji-filter-hd)
 
 
 ## Installation
@@ -21,6 +21,18 @@ $ npm install
 ```
 
 
+## Development
+
+Run with [npm](https://www.npmjs.com/)
+
+```sh
+$ npm run build
+```
+
+This command will be triggered automatically after installation. There are a lot of other commands, just take a look 
+into script section of package.json.
+
+
 ## Usage
 
 Run with [npm](https://www.npmjs.com/)
@@ -28,6 +40,7 @@ Run with [npm](https://www.npmjs.com/)
 ```sh
 $ npm run start
 ```
+
 
 ## RabbitMQ
 

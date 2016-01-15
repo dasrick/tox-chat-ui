@@ -6,7 +6,7 @@
 // Angular Emoji Filter HD /////////////////////////////////////////////////////////////////////////////////////////////
 @import '../../../node_modules/angular-emoji-filter-hd/dist/emoji';
 @emoji-images-path: '../img/';
-@media all and (-webkit-min-device-pixel-ratio: 1), all and (min--moz-device-pixel-ratio: 1), all and (-o-min-device-pixel-ratio: 1), all and (min-device-pixel-ratio: 1), all and (min-resolution: 96dpi) {
+@media all and (-webkit-min-device-pixel-ratio: 1), all and (min--moz-device-pixel-ratio: 1), all and (-o-min-device-pixel-ratio: 1/1), all and (min-device-pixel-ratio: 1), all and (min-resolution: 96dpi) {
   .emoji {
     background-image: url('@{emoji-images-path}emojis.png');
   }
@@ -23,7 +23,9 @@
 }
 // Angular Emoji Filter HD /////////////////////////////////////////////////////////////////////////////////////////////
 
+// Twitter Bootstrap ///////////////////////////////////////////////////////////////////////////////////////////////////
 @import (inline) '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import (inline) '../../../node_modules/bootstrap/dist/css/bootstrap-theme.min.css';
+// Twitter Bootstrap ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 @import "_chat";
