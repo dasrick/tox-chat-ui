@@ -11,13 +11,17 @@ window.SockJS = require('sockjs-client');
 window.Stomp = require('stompjs/lib/stomp.min').Stomp;
 
 require('angular-resource');
+require('angular-sanitize');
 require('angular-ui-router');
 require('mi-angular-chat');
+require('angular-emoji-filter-hd');
 
 var requires = [
   'ngResource',
+  'ngSanitize',
   'ui.router',
   'mi.Chat',
+  'dbaq.emoji',
   require('./components').name
 ];
 

@@ -30,5 +30,6 @@ node_modules
 web/css/*
 web/fonts/*
 web/i18n/*
+web/img/*
 web/js/*
 web/views/*
