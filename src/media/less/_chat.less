@@ -16,6 +16,7 @@ main {
     &.container {
       padding-left: 0;
       padding-right: 0;
+      overflow: hidden;
     }
   }
 }
@@ -98,4 +99,15 @@ main {
       background-color: #F9F4DC;
     }
   }
+
+  // Increase font-size to 16px to Prevent Input Zoom
+  // see: http://uxcellence.com/2014/01/15/quick-fix-increase-font-size-to-16px-to-fix-input-zoom/
+  input[type="text"], input[type="password"], input[type="date"],
+  input[type="datetime"], input[type="datetime-local"], input[type="month"],
+  input[type="week"], input[type="email"], input[type="number"],
+  input[type="search"], input[type="tel"], input[type="time"],
+  input[type="url"], textarea {
+    font-size: 16px;
+  }
+  // Increase font-size to 16px to Prevent Input Zoom
 }
