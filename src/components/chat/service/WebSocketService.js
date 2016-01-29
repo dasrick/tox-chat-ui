@@ -2,7 +2,7 @@
 /**
  * @ngInject
  */
-module.exports = function ($q, $log, $location) {
+module.exports = function ($q, $log) {
   var webSocketClient;
   webSocketClient = null;
   return {
@@ -21,7 +21,6 @@ module.exports = function ($q, $log, $location) {
         password: 'hL4BAyeN_IKMwWnVtcDlQQJ9b0zhFL24',
         host: 'https://hare.rmq.cloudamqp.com/stomp',
         vhost: 'jlbnllvg'
-        //host: 'amqp://127.0.0.1'
       };
       deferred = $q.defer();
       webSocketClient = window.Stomp.over(new window.SockJS(stompConfig.host));
