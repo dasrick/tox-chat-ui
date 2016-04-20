@@ -24,7 +24,7 @@
     "font-awesome": "^4.5.0",
     "fs-extra": "^0.26.2",
     "glob": "^6.0.1",
-    "jscs": "^2.7.0",
+    "jscs": "^3.0.0",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.1.0",
     "less": "^2.5.3",
