@@ -22,7 +22,7 @@
     "clean-css": "^3.4.8",
     "express": "^4.13.3",
     "font-awesome": "^4.5.0",
-    "fs-extra": "^0.26.2",
+    "fs-extra": "^0.28.0",
     "glob": "^6.0.1",
     "jscs": "^3.0.0",
     "jshint": "^2.8.0",
